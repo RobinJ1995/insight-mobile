@@ -14,6 +14,7 @@ import {
   Title,
   Subtitle,
   Left,
+  Right,
   Icon,
   Button,
   Card,
@@ -294,18 +295,22 @@ export default class Logs extends Component {
       <Container>
         <TouchableOpacity
           onPress={() => this.setState({ showLogSelector: true })}
-        >  
+        >
           <Header
-            androidStatusBarColor="#212933"  
-            style={{ backgroundColor: '#212933' }}
+            androidStatusBarColor="#212933"
+            style={{
+              backgroundColor: '#212933',
+              paddingTop: 0,
+            }}
           >
             <Left>
               <Icon ios="ios-list" android="md-list" style={{ color: 'white' }} />
             </Left>
-            <Body>
-              <Title>{selectedLogs.length} logs selected</Title>
+            <Body style={{ flex: 2 }}>
+              <Title style={{ color: 'white' }}>{selectedLogs.length} logs selected</Title>
               <Subtitle>Tap to change selection</Subtitle>
             </Body>
+            <Right />  
           </Header>
         </TouchableOpacity>  
         <Content>

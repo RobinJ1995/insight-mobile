@@ -14,6 +14,7 @@ import {
   Title,
   Subtitle,
   Left,
+  Right,
   Icon,
   Button,
   Card,
@@ -67,9 +68,12 @@ export default class LogSelector extends Component {
         >
           <Header
             androidStatusBarColor="#212933"
-            style={{ backgroundColor: '#212933' }}
+            style={{
+              backgroundColor: '#212933',
+              paddingTop: 0,
+            }}
           >
-            <Left>
+            <Left>  
               <Button
                 transparent
                 onPress={() => onClose(pendingSelection)}
@@ -77,10 +81,11 @@ export default class LogSelector extends Component {
                 <Icon ios="ios-close" android="md-close" style={{ color: 'white' }} />
               </Button>
             </Left>
-            <Body>
-              <Title>{pendingSelection.length} logs selected</Title>
+            <Body style={{ flex: 2 }}>
+              <Title style={{ color: 'white' }}>{pendingSelection.length} logs selected</Title>
               <Subtitle>Tap to apply selection</Subtitle>
             </Body>
+            <Right />
           </Header>
         </TouchableOpacity>  
         <Content>
