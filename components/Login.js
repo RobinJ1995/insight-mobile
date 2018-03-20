@@ -10,9 +10,10 @@ import {
   ActivityIndicator
 } from 'react-native';
 import CookieManager from 'react-native-cookies';
+import Promise from 'bluebird';
 import { INSIGHT_LOGIN_URL } from '../config';
 import restRequest from '../utils/restRequest';
-import Promise from 'bluebird';
+import Loading from '../components/Loading';
 
 export default class Login extends Component {
   constructor(props) {
@@ -106,12 +107,9 @@ export default class Login extends Component {
       }}
       >
         {loading && (
-          <View>
-            <ActivityIndicator
-              size={120}
-            />
-            <Text style={{ fontSize: 28, textAlign: 'center' }}>{status}</Text>
-          </View>
+          <Loading
+            status={status}
+          />
         )}  
         {!error && !loading && (<WebView
           style={{ width: 320 }}

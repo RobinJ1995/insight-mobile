@@ -4,6 +4,7 @@ import {
   View,
   ActivityIndicator,
   StyleSheet,
+  Platform,
 } from 'react-native';
 
 export default class Loading extends Component {
@@ -20,7 +21,7 @@ export default class Loading extends Component {
     return (
       <View style={styles.loading}>
         <ActivityIndicator
-          size={120}
+          size={Platform.OS === 'ios' ? 'large' : 120}
         />
         <Text style={{ fontSize: 28, textAlign: 'center' }}>{status}</Text>
       </View>
