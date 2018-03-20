@@ -45,9 +45,9 @@ export default class Authentication extends Component {
     });
 
     // auth = {
-    //   apiKey: '4f462a7d-61b9-49b2-ba11-8bb1f6ab524c',
+    //   apiKey: '',
     //   headers: {
-    //     'X-API-KEY': '4f462a7d-61b9-49b2-ba11-8bb1f6ab524c',
+    //     'X-API-KEY': '',
     //   },
     // };
 
