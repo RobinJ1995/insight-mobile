@@ -51,7 +51,7 @@ export default class LogEntry extends Component {
             onPress={() => Clipboard.setString(`${date.toLocaleString()} ${message}`)}
           >
             <Text
-              style={{ fontFamily: 'monospace' }}
+              style={{ fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace' }}
             >
               {message}
             </Text>
